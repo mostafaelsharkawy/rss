@@ -1,0 +1,27 @@
+<?php
+//var_dump($this->links);
+//var_dump($this->data);
+?>
+<div class="container" >
+    <div class="wrapper">
+        <?php
+        echo $this->form;
+        
+        ?>
+    </div>
+</div>
+<ul>
+<?php
+
+foreach ($this->links as $link) {
+//    var_dump($link['link']);
+
+?>
+    <li  style="display: inline;">
+<a  href="<?= $this->baseUrl().'/index/show/id/'.$link['id'];?>">link  <?=$link['id'];?></a>
+    </li>
+    <?php
+
+}
+?>
+</ul>

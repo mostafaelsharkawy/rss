@@ -1,0 +1,53 @@
+<?php echo $this->doctype() ?>
+<html>
+    <head>
+        <?php echo $this->headMeta(); ?>
+        <?php echo $this->headTitle() ?>
+        <?php echo $this->headLink() ?>
+        <?php echo $this->headScript() ?>
+    </head>
+    <style>
+
+        input[type="text"]{
+            width: 400px;
+        }
+        input[type="submit"]{
+            margin-left: 130px;
+        }
+        a{
+            margin: 10px;
+            font-weight: bold;
+            color: darkred;
+            font-size: 16px;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+        body{
+            margin-top: 50px;
+            background-color: lightgray;
+        }
+    </style>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">RSS</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="<?= $this->baseUrl().'/index' ;?>">Home</a></li>
+                    <li class="active"><a href="<?= $this->baseUrl().'/index/add' ;?>">Add</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div id="page-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+                        <?php echo $this->layout()->content; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

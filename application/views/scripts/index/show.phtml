@@ -1,0 +1,53 @@
+<h3> <?php echo $this->data["title"]; ?></h3>
+<h3> <a href="<?php echo $this->data["link"]; ?>">visit us</a></h3>
+<h3> <?php echo $this->data["description"]; ?></h3>
+<h3> <?php echo $this->data["dateModified"]; ?></h3>
+
+<!--<h3> <?php // echo $this->data["language"];  ?></h3>-->
+<!--<h3> <?php // echo $this->data->category('domain');      ?></h3>-->
+<style>
+    p{
+        color:darkslateblue;
+        font-weight: bold;
+    }
+</style>
+
+    <!--<pre>-->   
+<?php
+//       var_dump($this->link);
+//echo 'something';
+//    echo $this->link, '<br />';
+//    var_dump($this->data);
+//    var_dump($this->link[0]["link"]);
+//    var_dump($this->channel);
+// var_dump(($this->data['entries']).length());
+foreach ($this->data['entries'] as $item) {
+
+//        echo '<pre>';    
+//        var_dump($item);
+//        echo '</pre>';  
+    ?>
+    <!--</pre>-->
+    <div class="container-fluid " style="padding: 15px; border:2px solid lightgreen; background-color: lightyellow;">
+        <h3><?php echo $item["title"] . "<br/>"; ?></h3>
+        <!--//        echo $item->category['domain']. "<br/>";-->
+        <p><a href="<?php echo $item["link"] . '<br/>'; ?>">read more</a></p>
+        <p><?php echo $item["description"] . "<br/>"; ?></p>
+        <!--<p><?php // echo $item["authors"] . "<br/>";   ?></p>-->
+        <!--<p><?php // echo $item["content"] . "<br/>";  ?></p>-->
+        <?php
+//       echo $item->getAuthors(). "<br/>";
+//       echo $item->comments. "<br/>";
+        ?>
+        <p><?php echo $item["dateModified"] . "<br/>"; ?></p>
+
+        <!--<p><?php // echo "******************************************************** <br/>";     ?></p>-->
+        <!--die('end');-->
+        <!--//      echo $item->image['domain']. "<br/>";-->
+        <!--//      echo $item->category['domain']. "<br/>";-->
+    </div>
+    <?php
+}
+//    $this->data->toArray();
+//        echo $this->data->category['domain'];
+?>

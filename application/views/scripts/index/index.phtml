@@ -1,0 +1,47 @@
+<?php
+$count=1;
+foreach ($this->data['entries'] as $item) {
+$count++;
+//        echo '<pre>';    
+//        var_dump($item);
+//        echo '</pre>';  
+    ?>
+    <!--</pre>-->
+    <div class="container-fluid " style="padding: 15px; border:2px solid lightgreen; background-color: lightyellow;">
+        <h3><?php echo $item["title"] . "<br/>"; ?></h3>
+        <!--//        echo $item->category['domain']. "<br/>";-->
+        <p><a href="<?php echo $item["link"] . '<br/>'; ?>">read more</a></p>
+        <p><?php echo $item["description"] . "<br/>"; ?></p>
+        <!--<p><?php // echo $item["authors"] . "<br/>";  ?></p>-->
+        <!--<p><?php // echo $item["content"] . "<br/>"; ?></p>-->
+        <?php
+//       echo $item->getAuthors(). "<br/>";
+//       echo $item->comments. "<br/>";
+        ?>
+        <p><?php echo $item["dateModified"] . "<br/>"; ?></p>
+
+    <!--<p><?php // echo "******************************************************** <br/>";    ?></p>-->
+        <!--die('end');-->
+        <!--//      echo $item->image['domain']. "<br/>";-->
+        <!--//      echo $item->category['domain']. "<br/>";-->
+    </div>
+    <?php
+    if ($count==4){
+                break;}
+}
+?>
+<ul>
+<?php
+
+foreach ($this->links as $link) {
+//    var_dump($link['link']);
+
+?>
+    <li  style="display: inline;">
+<a  href="<?= $this->baseUrl().'/index/show/id/'.$link['id'];?>">link  <?=$link['id'];?></a>
+    </li>
+    <?php
+
+}
+?>
+</ul>
